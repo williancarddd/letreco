@@ -7,6 +7,7 @@
 #define LENGTH_WORD 6
 #define MAX_WORDS 100
 #define LENGTH_REAL_WORD LENGTH_WORD - 1
+#define NAME_FILE "words.txt"
 
 void bannerGamer()
 {
@@ -80,21 +81,43 @@ void fillLineMatriz(char matriz[][LENGTH_REAL_WORD], char word[], int position, 
   }
 }
 
-void readFileWordsAndFillArrayWords(char *filename, char words[][MAX_WORDS], int *length)
+int countLineFile(char *filename)
 {
+  //count line files and return the length
   FILE *file = fopen(filename, "r");
-  int i = 0;
-  if (file == NULL)
+  int count = 0;
+  char c;
+  while ((c = fgetc(file)) != EOF)
   {
-    printf("Erro ao abrir o arquivo\n");
-    exit(1);
+    if (c == '\n')
+    {
+      count++;
+    }
   }
-  while (!feof(file))
+  return count;
+}
+
+void getLineFile(char *filename, int numberLine, char *wordGamer)
+{
+  // get line File
+  if(numberLine == 1) {
+    numberLine = 2;
+  }
+  FILE *file = fopen(filename, "r");
+  int count = 1;
+  char c;
+  while ((c = fgetc(file)) != EOF)
   {
-    fscanf(file, "%s", words[i]);
-    i++;
+    if (c == '\n') // cada \n é uma linha
+    {
+      count++;
+    }
+    if (count == numberLine)
+    {
+      fscanf(file, "%s", wordGamer);
+      break;
+    }
   }
-  *length = i; // quantidade de palavras no banco de dados
   fclose(file);
 }
 
@@ -106,12 +129,9 @@ int randomNumber(int min, int max)
 
 void generateRandomWord(char *wordGamer)
 {
-  char words[LENGTH_WORD][MAX_WORDS];
-  int lengthDbWords;
-  int *lengthDbWordsP = &lengthDbWords;
-  readFileWordsAndFillArrayWords("words.txt", words, lengthDbWordsP);
-  int randomNumberForWord = randomNumber(0, lengthDbWords - 1);
-  strcpy(wordGamer, words[randomNumberForWord]);
+  int lines = countLineFile(NAME_FILE);
+  int randomNumberForWord = randomNumber(1, lines); 
+  getLineFile(NAME_FILE, randomNumberForWord, wordGamer);
 }
 
 int compareWord(char *wordGamer, char *word, char *maskFill)
@@ -191,7 +211,7 @@ void main()
       if (count == LENGTH_REAL_WORD)
       {
         printf("Parabens voce acertou a palavra era \"%s.\" \n", wordGamer);
-        printf("Tentativas feitas: %d", tries - 1);
+        printf("Tentativas feitas: %d", tries);
         break;
       }
       else

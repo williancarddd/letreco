@@ -1,0 +1,9 @@
+O letreco que estamos desenvolvendo tem o seguinte funcionamento:
+  1 - O usuário possui 5 tentativas
+  2 - O usuário  deve digitar, para cada tentativa, uma palavra com 5 letras.
+  3 - Para cada palavra digitada:
+    3.1 - Se a palavra digitada estiver correta, o programa deve informar ao usuário que a palavra está correta.
+    3.2 - se a palavra que o usuário digitou conter letras que estão na palvra secreta, o programa deverá: 
+      3.2.1 - se a letra estiver na mesma posição que a original , a mascara deverá mostrá-la na mesma posição.
+      3.2.2 - se a letra estiver em outra posição, a mascara deverá mostrar um "+" , de que a letra existe, mas está fora de posição.
+    3.3 - Se a palavra digitada não conter letras que estão na palavra secreta, o programa deverá mostrar um "#" no lugar das letras que não existem.

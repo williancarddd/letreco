@@ -5,7 +5,6 @@
 #include <time.h>;
 #include <string.h>;
 #define LENGTH_WORD 6
-#define MAX_WORDS 100
 #define LENGTH_REAL_WORD LENGTH_WORD - 1
 #define NAME_FILE "words.txt"
 
@@ -176,23 +175,22 @@ int checkLetterInWord(char *word, char *letter)
 
 void main()
 {
-  // inicializando variaveis char
-  char wordGamer[LENGTH_WORD] = ""; // palavra da vez no jogo
+  
+  char wordGamer[LENGTH_WORD] = ""; 
   char *wordGamerP = &wordGamer;
-  char maskWord[LENGTH_WORD] = "_____"; // mascara para a palavra
+  char maskWord[LENGTH_WORD] = "_____"; 
   char *maskWordP = &maskWord;
-  char word[LENGTH_WORD] = "";                               // palavra do usuário
-  char matrizWords[LENGTH_REAL_WORD][LENGTH_REAL_WORD] = {}; // matriz para armazenar as palavras
+  char word[LENGTH_WORD] = "";                               
+  char matrizWords[LENGTH_REAL_WORD][LENGTH_REAL_WORD] = {}; 
 
-  // inicializando variaveis inteiras
-  int amountOfTries = 5; // número de tentativas restantes
-  int tries = 1;         // número de tentativas feitas
+  
+  int amountOfTries = 5; 
+  int tries = 1;      
 
-  // configurações iniciais, iniciando funções.
-  generateRandomWord(wordGamerP); // gera uma palavra aleatória
-  fillMatrizMask(matrizWords);    // preenche a matriz com '_'
+  generateRandomWord(wordGamerP); 
+  fillMatrizMask(matrizWords);    
   printf("%s\n", wordGamer);
-  bannerGamer(); // imprime o banner do jogo
+  bannerGamer(); 
 
   while (amountOfTries >= 0)
   {
@@ -207,7 +205,7 @@ void main()
     }
     else
     {
-      int count = compareWord(wordGamer, word, maskWordP); // quantidade de letras corretas em uma tentativa
+      int count = compareWord(wordGamer, word, maskWordP); 
       if (count == LENGTH_REAL_WORD)
       {
         printf("Parabens voce acertou a palavra era \"%s.\" \n", wordGamer);
@@ -216,11 +214,11 @@ void main()
       }
       else
       {
-        fillLineMatriz(matrizWords, word, tries - 1, wordGamer); // preenche a linha da matriz com a palavra do usuário
+        fillLineMatriz(matrizWords, word, tries - 1, wordGamer); 
       }
       amountOfTries--;
       tries++;
-      // system("clear");
+      //system("clear");
     }
   }
 }

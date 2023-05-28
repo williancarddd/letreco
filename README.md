@@ -1,5 +1,5 @@
 # letreco
-## Alunos envolvidos no trabalho final de PROGRAMAÇÂO I da Universidade Federal de Rondônia ! período 2021 / Curso Ciência da Computação.
+## Alunos envolvidos no trabalho final de PROGRAMAÇÃO I da Universidade Federal de Rondônia ! período 2021 / Curso Ciência da Computação.
 
 ### Cordenação
 - Prof. Dr Marcelo  Batista Ribeiro

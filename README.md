@@ -1,11 +1,11 @@
 # letreco
-## Alunos envolvidos no trabalho final de PROGRAMAÇÂO I da Universidade Federal de Rondônia
+## Alunos envolvidos no trabalho final de PROGRAMAÇÂO I da Universidade Federal de Rondônia ! período 2021 / Curso Ciência da Computação.
 
-###Cordenação
+### Cordenação
 - Prof. Dr Marcelo  Batista Ribeiro
 - Aluno William Cardoso Barbosa
 
-###Desenvolvimento da Aplicação
+### Desenvolvimento da Aplicação
 - Aluno(a) ALICE DA SILVA AKAKI 
 - Aluno(a) JOAO GUILHERME TAVARES REIS 
 - Aluno(a) ANDERSON DA SILVA MENDONÇA 

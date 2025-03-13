@@ -13,7 +13,7 @@
 
 
 
-> Esse projeto possui alguns sites estáticos criados na disciplina de HTML e CSS do Canal Curso em Video.
+> Projeto inspirado na aplicação TERMO
 
 ## Install
 
